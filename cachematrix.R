@@ -24,13 +24,16 @@ list(set=set, get=get,
 ##then the cachesolve should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
+         ##checks other than a null matrix
          m<-x$getmatrix()
     if(!is.null(m)){
       message("getting cached data")
       return(m)
     }
+     ##the input matrix obtained
     matrix<-x$get()
     m<-solve(matrix, ...)
+    ##Calculate its invers
     x$setmatrix(m)
     m
 }
