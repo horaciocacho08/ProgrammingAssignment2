@@ -32,8 +32,9 @@ cacheSolve <- function(x, ...) {
     }
      ##the input matrix obtained
     matrix<-x$get()
+    ##Calculate its inverse
     m<-solve(matrix, ...)
-    ##Calculate its invers
     x$setmatrix(m)
+    ##Show the inverse
     m
 }
